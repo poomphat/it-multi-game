@@ -60,6 +60,11 @@
                     score(2)
                     return;
                 }
+                if(!player1.alive && !player2.alive){
+                    gamestart()
+                    clearInterval(stopDraw)
+                    score(3)
+                }
                 for(var i=0; i<scene.length; i++){
                     var block = scene[i];
                     context.fillRect(block.x, block.y, BLOCK_WIDTH, BLOCK_HEIGHT);
@@ -176,9 +181,11 @@
                     score1 ++
                     updatescore(1)
                 }
-                else{
+                else if(s==2){
                     score2 ++
                     updatescore(2)
+                }else if(s==3){
+                    updatescore(3)
                 }
                             
             }
@@ -186,7 +193,9 @@
                 if (u == 1) {
                     score_1.innerText = score1
                 }
-                else{
+                else if(u==2){
                     score_2.innerText = score2
+                }else{
+                    break
                 }
                 }

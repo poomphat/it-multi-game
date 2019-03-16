@@ -9,3 +9,6 @@ body{
     background-size: cover; 
     background-image: url("wli.jpg");
 }
+h2{
+	text-align: center;
+}

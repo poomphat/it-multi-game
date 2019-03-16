@@ -2,6 +2,8 @@
             var scene, player1, player2;
             const BLOCK_WIDTH = BLOCK_HEIGHT = 10;
             var stopDraw;
+            var score1 = 0
+            var score2 = 0
             gamestart();
 
             function gamestart(){
@@ -20,7 +22,7 @@
 
                 player1 = new Player1(100,350,'W','S','A','D');
                 player1.check();
-                player2 = new Player2(1500,350,'I','K','J','L');
+                player2 = new Player2(1200,350,'I','K','J','L');
                 player2.check();
 
                 //ตำเเหน่งของกำเเพง
@@ -48,12 +50,14 @@
                 if(!player1.alive) {
                     gamestart()
                     clearInterval(stopDraw);
+                    score(1)
                     return;
                 }
                 player2.check()
                 if(!player2.alive) {
                     gamestart()
                     clearInterval(stopDraw);
+                    score(2)
                     return;
                 }
                 for(var i=0; i<scene.length; i++){
@@ -167,3 +171,22 @@
             function wallcash(x,y){
                 scene.push({x:x,y:y})
             }
+            function score(s){
+                if (s == 1) {
+                    score1 ++
+                    updatescore(1)
+                }
+                else{
+                    score2 ++
+                    updatescore(2)
+                }
+                            
+            }
+            function updatescore(u){
+                if (u == 1) {
+                    score_1.innerText = score1
+                }
+                else{
+                    score_2.innerText = score2
+                }
+                }

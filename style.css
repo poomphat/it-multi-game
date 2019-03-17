@@ -1,7 +1,7 @@
 canvas{
     position: relative;
-    top:50px;
-    left: 15%;
+    top: 50px;
+    left: 25%;
     background-image: url("wall.gif");
     background-size: cover;   
     animation: mymove 0.25s infinite alternate;

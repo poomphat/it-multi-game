@@ -11,9 +11,9 @@
                 canvas = document.getElementById("canvas");
                 context = canvas.getContext("2d");
                 // ¡ÓË¹´¢¹Ò´¢Í§¡Óàà¾§
-                canvas.style.width ='70%';
+                canvas.style.width ='50%';
                 canvas.width = window.innerWidth;
-                canvas.style.height ='70%';
+                canvas.style.height ='50%';
                 canvas.height = window.innerHeight;
                 // ÊÕ¢Í§àÊé¹
                 context.fillStyle = "black";

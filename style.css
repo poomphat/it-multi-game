@@ -4,8 +4,7 @@ canvas{
     left: 15%;
     background-image: url("wall.jpg");
     background-size: cover;   
-    box-shadow: 0px 0px 27px 2px rgb(50,206,217,1);
-    animation: mymove 0.5s infinite;
+    animation: mymove 0.25s infinite alternate;
     opacity: 0.8;
 }
 body{
@@ -19,6 +18,6 @@ h2{
     color: white;
 }
 @keyframes mymove {
-    from {box-shadow: 0px 0px 27px 2px rgb(50,206,217,1);}
-    to {box-shadow: 0px 0px 27px 30px rgb(50,206,217,1);}
+    from {box-shadow: 0px 0px 27px 2px rgb(28,25,43);}
+    to {box-shadow: 0px 0px 27px 30px rgb(147,141,181);}
   }

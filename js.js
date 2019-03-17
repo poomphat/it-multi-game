@@ -6,7 +6,7 @@
             var score2 = 0
             window.onload = function() {
                 document.getElementById("load").style.display = "none";
-                gamestart()
+                gamestart();
             };
             function gamestart(){
                 //the cavas is the drawing space

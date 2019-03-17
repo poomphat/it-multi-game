@@ -60,6 +60,10 @@
                     context.textAlign = "center";
                     context.fillText("Player2 WIN!!!!!!!!!", canvas.width/2, canvas.height/2);
                     clearInterval(stopDraw);
+                    var c = document.getElementById("canvas");
+                    var ctx = c.getContext("2d");
+                    var img = document.getElementById("p2-win");
+                    ctx.drawImage(img, canvas.width/4, canvas.height/4);
                     score(1)
                     return;
                 }
@@ -70,6 +74,11 @@
                     context.textAlign = "center";
                     context.fillText("Player1 WIN!!!!!!"+name, canvas.width/2, canvas.height/2);
                     clearInterval(stopDraw);
+                    var c = document.getElementById("canvas");
+                    var ctx = c.getContext("2d");
+                    var img = document.getElementById("p1-win");
+                    ctx.drawImage(img, canvas.width/4, canvas.height/4);
+                    score(1)
                     score(2)
                     return;
                 }

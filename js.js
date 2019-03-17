@@ -10,22 +10,23 @@
                 //the cavas is the drawing space
                 canvas = document.getElementById("canvas");
                 context = canvas.getContext("2d");
-                // กำหนดขนาดของกำเเพง
+                // ¡ÓË¹´¢¹Ò´¢Í§¡Óàà¾§
                 canvas.style.width ='70%';
                 canvas.width = window.innerWidth;
                 canvas.style.height ='70%';
                 canvas.height = window.innerHeight;
-                // สีของเส้น
+                // ÊÕ¢Í§àÊé¹
                 context.fillStyle = "black";
 
                 scene = [];
-
+                
                 player1 = new Player1(100,350,'W','S','A','D');
                 player1.check();
                 player2 = new Player2(1200,350,'I','K','J','L');
                 player2.check();
-
-                //ตำเเหน่งของกำเเพง
+                player1.alive = true;
+                player2.alive = true;
+                //µÓààË¹è§¢Í§¡Óàà¾§
                 var minX = 10;
                 var maxX = canvas.width - canvas.width%10-20;
                 var minY = 10;
@@ -40,40 +41,51 @@
                     }
                 window.addEventListener('keydown',keyPress,false);
                     stopDraw = setInterval(draw,40);
-    
+                
                 
             }
-            
-            // เช็อการอยู้รอกเเละวาดเส้น
+            function keyPress(e) {
+                // ¤ÇÁ¤ØÁà»ç¹ char
+                e.preventDefault();
+                var key = String.fromCharCode(e.which);
+                player1.keyPress(key);
+                player2.keyPress(key);
+            }
+            // àªçÍ¡ÒÃÍÂÙéÃÍ¡ààÅÐÇÒ´àÊé¹
             function draw(){
                 player1.check()
                 if(!player1.alive) {
-                    gamestart()
+                    context.font = "70px Poppins";
+                    context.fillStyle = "red";
+                    context.textAlign = "center";
+                    context.fillText("Player2 WIN!!!!!!!!!", canvas.width/2, canvas.height/2);
                     clearInterval(stopDraw);
                     score(1)
                     return;
                 }
                 player2.check()
                 if(!player2.alive) {
-                    gamestart()
+                    context.font = "70px Poppins";
+                    context.fillStyle = "red";
+                    context.textAlign = "center";
+                    context.fillText("Player1 WIN!!!!!!"+name, canvas.width/2, canvas.height/2);
                     clearInterval(stopDraw);
                     score(2)
                     return;
                 }
                 for(var i=0; i<scene.length; i++){
                     var block = scene[i];
-                    context.fillRect(block.x, block.y, BLOCK_WIDTH, BLOCK_HEIGHT);
+                    context.fillRect(block.x, block.y, BLOCK_WIDTH, BLOCK_HEIGHT)
                 }
-            }
+                window.addEventListener('keydown', function() { 
+                        if (event.keyCode === 82){
+                            clearInterval(stopDraw);
+                            gamestart()
+                        }
+                     }, false);
+             }
             
-            function keyPress(e) {
-                // ควมคุมเป็น char
-                e.preventDefault();
-                var key = String.fromCharCode(e.which);
-                player1.keyPress(key);
-                player2.keyPress(key);
-            }
-            // ตำเเหน่งของ player เเละการควบคุม
+            // µÓààË¹è§¢Í§ player ààÅÐ¡ÒÃ¤Çº¤ØÁ
             function Player1(startX,startY,upKey, downKey,leftKey,rightKey){
                 this.alive = true;
                 this.x = startX;

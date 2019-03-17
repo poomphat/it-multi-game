@@ -70,7 +70,6 @@
                     var ctx = c.getContext("2d");
                     var img = document.getElementById("p1-win");
                     ctx.drawImage(img, canvas.width/3, canvas.height/3);
-                    score(1)
                     score(2)
                     return;
                 }

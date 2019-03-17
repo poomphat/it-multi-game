@@ -6,13 +6,17 @@ canvas{
     background-size: cover;   
     box-shadow: 0px 0px 27px 2px rgb(50,206,217,1);
     animation: mymove 0.5s infinite;
+    opacity: 0.8;
 }
 body{
-    background-size: cover; 
-    background-image: url("wli.jpg");
+    background-size: 100% 100%;
+    background-position: center;
+    background-attachment: fixed; 
+    background-image: url("giphy.gif");
 }
 h2{
 	text-align: center;
+    color: white;
 }
 @keyframes mymove {
     from {box-shadow: 0px 0px 27px 2px rgb(50,206,217,1);}

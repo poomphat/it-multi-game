@@ -21,3 +21,7 @@ h2{
     from {box-shadow: 0px 0px 27px 2px rgb(28,25,43);}
     to {box-shadow: 0px 0px 27px 30px rgb(147,141,181);}
   }
+img{
+    position: absolute;
+    opacity: 0;
+}

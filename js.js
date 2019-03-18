@@ -55,6 +55,8 @@
                 player1.check()
                 if(!player1.alive) {
                     clearInterval(stopDraw);
+                    const audio = new Audio("ya.wav");
+                    audio.play();
                     var c = document.getElementById("canvas");
                     var ctx = c.getContext("2d");
                     var img = document.getElementById("p2-win");
@@ -65,6 +67,8 @@
                 player2.check()
                 if(!player2.alive) {
                     clearInterval(stopDraw);
+                    const audio = new Audio("ya.wav");
+                    audio.play();
                     var c = document.getElementById("canvas");
                     var ctx = c.getContext("2d");
                     var img = document.getElementById("p1-win");
@@ -98,19 +102,32 @@
                 this.keyPress = function(key){
                     if(key == this.up) {
                         if(this.direction != this.down)
+                        {
+                            const audio = new Audio("walk.wav");
+                            audio.play();
                             this.direction = this.up;
+                        }
                     }
                     else if(key == this.down) {
-                        if(this.direction != this.up)
+                        if(this.direction != this.up){
+                            const audio = new Audio("walk.wav");
+                            audio.play();
                             this.direction = this.down;
+                        }
                     }
                     else if(key == this.left){
-                        if(this.direction != this.right)
+                        if(this.direction != this.right){
+                            const audio = new Audio("walk.wav");
+                            audio.play();
                             this.direction = this.left;
+                        }
                     }
                     else if(key == this.right) {
-                    if(this.direction != this.left)
+                    if(this.direction != this.left){
+                            const audio = new Audio("walk.wav");
+                            audio.play();
                             this.direction = this.right;
+                    }
                     }
                 }
 
@@ -144,19 +161,32 @@
                 this.keyPress = function(key){
                     if(key == this.up) {
                         if(this.direction != this.down)
+                        {
+                            const audio = new Audio("walk.wav");
+                            audio.play();
                             this.direction = this.up;
+                        }
                     }
                     else if(key == this.down) {
-                        if(this.direction != this.up)
+                        if(this.direction != this.up){
+                            const audio = new Audio("walk.wav");
+                            audio.play();
                             this.direction = this.down;
+                        }
                     }
                     else if(key == this.left){
-                        if(this.direction != this.right)
+                        if(this.direction != this.right){
+                            const audio = new Audio("walk.wav");
+                            audio.play();
                             this.direction = this.left;
+                        }
                     }
                     else if(key == this.right) {
-                    if(this.direction != this.left)
+                    if(this.direction != this.left){
+                            const audio = new Audio("walk.wav");
+                            audio.play();
                             this.direction = this.right;
+                    }
                     }
                 }
 

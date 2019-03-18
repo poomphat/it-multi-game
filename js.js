@@ -167,7 +167,7 @@
                             this.direction = this.up;
                         }
                     }
-                    else if(key == this.down) {
+                    else if(key == this.down) { 
                         if(this.direction != this.up){
                             const audio = new Audio("walk.wav");
                             audio.play();
@@ -188,7 +188,7 @@
                             this.direction = this.right;
                     }
                     }
-                }
+                }   
 
                 this.check = function(){
                     if(this.direction == this.up) 

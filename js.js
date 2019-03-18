@@ -4,6 +4,7 @@
             var stopDraw;
             var score1 = 0
             var score2 = 0
+            var bgmi = 0;
             function gamestart(){
                 //the cavas is the drawing space
                 canvas = document.getElementById("canvas");

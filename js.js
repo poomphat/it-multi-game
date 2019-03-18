@@ -19,9 +19,9 @@
 
                 scene = [];
                 
-                player1 = new Player1(100,350,'W','S','A','D');
+                player1 = new Player1(300,430,'W','S','A','D');
                 player1.check();
-                player2 = new Player2(1200,350,'I','K','J','L');
+                player2 = new Player2(1600,430,'I','K','J','L');
                 player2.check();
                 player1.alive = true;
                 player2.alive = true;
